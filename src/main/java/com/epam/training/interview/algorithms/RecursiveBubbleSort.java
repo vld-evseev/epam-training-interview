@@ -4,7 +4,7 @@ import java.util.List;
 
 public class RecursiveBubbleSort {
     
-    public static void sort(List<? extends Comparable> list) {
+    public static <T extends Comparable<? super T>> void sort(List<T> list) {
         if (list.isEmpty()) {
             return;
         }
@@ -12,7 +12,7 @@ public class RecursiveBubbleSort {
         sort(list, list.size());
     }
 
-    private static void sort(List<? extends Comparable> list, int limit) {
+    private static <T extends Comparable<? super T>> void sort(List<T> list, int limit) {
         if (limit == 1) {
             return; 
         }
